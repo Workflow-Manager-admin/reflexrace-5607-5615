@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import ReactionTestGame from "./ReactionTestGame";
+import Leaderboard from "./Leaderboard";
 
 /**
  * PUBLIC_INTERFACE
