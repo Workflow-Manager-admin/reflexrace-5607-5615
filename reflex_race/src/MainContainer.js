@@ -3,24 +3,31 @@ import styled, { createGlobalStyle } from "styled-components";
 import ReactionTestGame from "./ReactionTestGame";
 import Leaderboard from "./Leaderboard";
 
-// Global styles with new vibrant palette and improved font
+/* PUBLIC_INTERFACE
+ * MainContainer: Luminous, cool, supergradient UI styling ♒️
+ */
 const GlobalStyle = createGlobalStyle`
   :root {
-    --cool-blue: #28C7FA;
-    --vivid-indigo: #5B4BFF;
-    --turquoise: #00F2C3;
-    --deep-purple: #5433FF;
-    --hot-pink: #FF54B6;
-    --dark-bg: #101527;
-    --card-bg: rgba(40, 199, 250, 0.12);
-    --text-primary: #ffffff;
-    --text-secondary: rgba(255,255,255,0.78);
-    --border-color: rgba(89,158,194,0.16);
-    --glow: 0 0 24px 2px var(--cool-blue);
+    --cool-blue: #72dbf8;
+    --turquoise: #7fffd4;
+    --mint: #adffe7;
+    --sky: #b2e6fb;
+    --soft-violet: #b0bbff;
+    --teal: #51e0c5;
+    --azure: #89f1fe;
+    --lilac: #c9bfff;
+    --gradient-blue-cyan: linear-gradient(130deg, #aaf1ff 0%, #89f1fe 47%, #b7ffe5 100%);
+    --gradient-violet-sky: linear-gradient(110deg, #d5e2ff 0%, #b0bbff 54%, #adffe7 100%);
+    --gradient-mint-teal: linear-gradient(107deg, #7fffd4 9%, #51e0c5 58%, #b2e6fb 100%);
+    --text-primary: #263140;
+    --text-secondary: #42647d;
+    --border-color: #e4faff;
+    --card-bg: linear-gradient(130deg, #fafdff 0%, #c6f9f2 100%);
+    --glow: 0 0 16px 2px #89f1fe80;
   }
 
   body {
-    background: linear-gradient(135deg, var(--deep-purple) 0%, var(--cool-blue) 60%, var(--turquoise) 100%);
+    background: var(--gradient-blue-cyan);
     background-attachment: fixed;
     color: var(--text-primary);
     min-height: 100vh;
@@ -30,7 +37,8 @@ const GlobalStyle = createGlobalStyle`
 
 const MainBackground = styled.div`
   min-height: 100vh;
-  background: none;
+  /* No dark backgrounds; radiant, airy look */
+  background: var(--gradient-blue-cyan);
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
@@ -38,8 +46,8 @@ const MainBackground = styled.div`
 `;
 
 const ModernNavbar = styled.nav`
-  background: linear-gradient(90deg, var(--deep-purple), var(--vivid-indigo));
-  box-shadow: 0 2px 12px -2px #19197085;
+  background: var(--gradient-violet-sky);
+  box-shadow: 0 2px 12px -2px #d3f8ff56;
   padding: 20px 0;
   display: flex;
   align-items: center;

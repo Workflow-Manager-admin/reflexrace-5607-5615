@@ -2,9 +2,9 @@
 > react-kavia@0.1.0 start
 > react-scripts start
 
-(node:1478) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:1909) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 (Use `node --trace-deprecation ...` to show where the warning was created)
-(node:1478) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:1909) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 Starting the development server...
 
 Compiled successfully!
@@ -18,66 +18,6 @@ Note that the development build is not optimized.
 To create a production build, use npm run build.
 
 webpack compiled successfully
-Compiling...
-Failed to compile.
-
-Module not found: Error: Can't resolve 'styled-components' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-ERROR in ./src/MainContainer.js 5:0-62
-Module not found: Error: Can't resolve 'styled-components' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-
-webpack compiled with 1 error
-Compiling...
-Failed to compile.
-
-Module not found: Error: Can't resolve 'styled-components' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-ERROR in ./src/MainContainer.js 5:0-62
-Module not found: Error: Can't resolve 'styled-components' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-
-ERROR in ./src/ReactionTestGame.js 6:0-51
-Module not found: Error: Can't resolve './ReactionTestGame.module.css' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-
-webpack compiled with 2 errors
-Compiling...
-Failed to compile.
-
-Module not found: Error: Can't resolve './Leaderboard.module.css' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-ERROR in ./src/Leaderboard.js 5:0-46
-Module not found: Error: Can't resolve './Leaderboard.module.css' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-
-ERROR in ./src/MainContainer.js 5:0-62
-Module not found: Error: Can't resolve 'styled-components' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-
-ERROR in ./src/ReactionTestGame.js 6:0-51
-Module not found: Error: Can't resolve './ReactionTestGame.module.css' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-
-webpack compiled with 3 errors
-Compiling...
-Failed to compile.
-
-Module not found: Error: Can't resolve './Leaderboard.module.css' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-ERROR in ./src/Leaderboard.js 5:0-46
-Module not found: Error: Can't resolve './Leaderboard.module.css' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-
-ERROR in ./src/MainContainer.js 5:0-62
-Module not found: Error: Can't resolve 'styled-components' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-
-webpack compiled with 2 errors
-Compiling...
-Failed to compile.
-
-Module not found: Error: Can't resolve 'styled-components' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-ERROR in ./src/MainContainer.js 5:0-62
-Module not found: Error: Can't resolve 'styled-components' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-
-webpack compiled with 1 error
-Compiling...
-Failed to compile.
-
-Module not found: Error: Can't resolve 'styled-components' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-ERROR in ./src/MainContainer.js 5:0-62
-Module not found: Error: Can't resolve 'styled-components' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
-
-webpack compiled with 1 error
 Compiling...
 Compiled successfully!
 webpack compiled successfully
