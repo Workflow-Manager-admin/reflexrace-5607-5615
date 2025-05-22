@@ -51,3 +51,14 @@ ERROR in ./src/ReactionTestGame.js 6:0-51
 Module not found: Error: Can't resolve './ReactionTestGame.module.css' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
 
 webpack compiled with 3 errors
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve './Leaderboard.module.css' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
+ERROR in ./src/Leaderboard.js 5:0-46
+Module not found: Error: Can't resolve './Leaderboard.module.css' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
+
+ERROR in ./src/MainContainer.js 5:0-62
+Module not found: Error: Can't resolve 'styled-components' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
+
+webpack compiled with 2 errors
