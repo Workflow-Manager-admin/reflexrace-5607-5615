@@ -65,7 +65,7 @@ function MainContainer() {
             gap: 24,
           }}
         >
-          {/* Leaderboard Placeholder */}
+          {/* Leaderboard Section */}
           <div
             style={{
               background: "rgba(255,255,255,0.04)",
@@ -76,11 +76,7 @@ function MainContainer() {
               marginBottom: 8,
             }}
           >
-            <h3 style={{ marginTop: 0, color: "var(--kavia-orange)" }}>🏆 Leaderboard</h3>
-            <div style={{ color: "var(--text-secondary)", fontStyle: "italic" }}>
-              Leaderboard will be shown here.<br />
-              (Feature coming soon)
-            </div>
+            <Leaderboard />
           </div>
           {/* Performance Tracking Placeholder */}
           <div
