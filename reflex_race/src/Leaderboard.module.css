@@ -1,19 +1,21 @@
 :root {
-  --cool-blue: #28C7FA;
-  --vivid-indigo: #5B4BFF;
-  --turquoise: #00F2C3;
-  --deep-purple: #5433FF;
-  --hot-pink: #FF54B6;
+  --cool-blue: #72dbf8;
+  --turquoise: #7fffd4;
+  --mint: #adffe7;
+  --sky: #b2e6fb;
+  --soft-violet: #b0bbff;
+  --teal: #51e0c5;
+  --azure: #89f1fe;
+  --lilac: #c9bfff;
 }
 
 .title {
   margin-top: 0;
-  color: var(--cool-blue);
   margin-bottom: 16px;
   font-size: 1.28rem;
   font-weight: 700;
-  letter-spacing: 1px;
-  background: linear-gradient(89deg, var(--turquoise) 0%, var(--hot-pink) 53%, var(--cool-blue) 100%);
+  letter-spacing: 0.5px;
+  background: linear-gradient(93deg, var(--teal) 0%, var(--cool-blue) 50%, var(--soft-violet) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -22,7 +24,7 @@
   list-style: none;
   padding-left: 0;
   margin: 0;
-  color: #e8f8ff;
+  color: #2b4a56;
   font-size: 1.12rem;
   display: flex;
   flex-direction: column;
@@ -33,55 +35,58 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 7px 12px;
+  padding: 8px 15px;
   margin-bottom: 2px;
-  border-radius: 10px;
-  background: linear-gradient(89deg, rgba(40,199,250,0.07) 0%, rgba(255,84,182,0.09) 100%);
-  color: #c6f2ff;
+  border-radius: 13px;
+  background: linear-gradient(90deg, #e5ffff 0%, #defffd 79%);
+  color: #316591;
   font-weight: 500;
   letter-spacing: 0.6px;
-  box-shadow: 0 2px 10px -6px #28C7FA33;
-  animation: leaderboardIn 0.42s backwards;
+  box-shadow: 0 2px 12px -9px #89f1fe80;
+  animation: leaderboardIn 0.35s backwards;
+  border: 1.1px solid #deeeff;
 }
 @keyframes leaderboardIn {
-  0% { opacity: 0; transform: translateY(20px) scale(0.98);}
-  90% { opacity: 0.85;}
+  0% { opacity: 0; transform: translateY(18px) scale(0.98);}
+  90% { opacity: 0.9;}
   100% { opacity: 1; transform: none;}
 }
 
 .topScorer {
-  background: linear-gradient(92deg, var(--turquoise) 10%, var(--hot-pink) 79%);
-  color: #fff;
+  background: linear-gradient(92deg, var(--cool-blue) 3%, var(--mint) 79%, var(--soft-violet) 100%);
+  color: #3067b2;
   font-weight: 700;
   font-size: 1.14rem;
-  box-shadow: 0 2px 18px -3px #00f2c344, 0 0 12px #ff54b688;
-  border: 1.3px solid var(--hot-pink);
-  transform: scale(1.04);
+  box-shadow: 0 3px 26px -8px #7fffd499, 0 0 18px #b0bbff44;
+  border: 1.4px solid #89f1fec0;
+  transform: scale(1.045);
 }
 
 .leaderName {
   min-width: 120px;
   font-family: 'JetBrains Mono', 'Menlo', 'monospace', monospace;
-  font-weight: inherit;
+  font-weight: 600;
   font-size: inherit;
   display: inline-block;
-  filter: drop-shadow(0 0 2px #28c7fa55);
+  filter: drop-shadow(0 0 2px #89f1fe2c);
 }
 
 .leaderTime {
   margin-left: 8px;
   font-family: 'JetBrains Mono', 'Menlo', 'monospace', monospace;
-  color: #fff;
-  background: rgba(40, 199, 250, 0.14);
+  color: #318eb9;
+  background: #eaffff;
   border-radius: 7px;
-  padding: 3px 12px;
+  padding: 3px 17px;
   font-weight: 700;
-  font-size: 1.04rem;
-  box-shadow: 0 0 3px #28c7fa33;
+  font-size: 1.05rem;
+  box-shadow: 0 0 6px #7fffd417;
+  border: 1px solid #b0bbff50;
 }
 
 .topScorer .leaderTime {
-  background: rgba(255, 255, 255, 0.23);
-  color: var(--vivid-indigo);
-  box-shadow: 0 2px 10px -2px #5b4bffaa;
+  background: #bafcff;
+  color: #735ef5;
+  box-shadow: 0 2px 14px -4px #b0bbff66;
+  border-color: #b0bbff99;
 }
