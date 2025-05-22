@@ -70,3 +70,17 @@ ERROR in ./src/MainContainer.js 5:0-62
 Module not found: Error: Can't resolve 'styled-components' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
 
 webpack compiled with 1 error
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'styled-components' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
+ERROR in ./src/MainContainer.js 5:0-62
+Module not found: Error: Can't resolve 'styled-components' in '/home/kavia/workspace/code-generation/reflexrace-5607-5615/reflex_race/src'
+
+webpack compiled with 1 error
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
