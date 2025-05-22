@@ -124,20 +124,19 @@ const GameCardSection = styled.section`
   flex: 2;
   min-width: 320px;
   min-height: 340px;
-  background: linear-gradient(135deg, var(--card-bg), rgba(91, 75, 255, 0.22) 90%);
-  border-radius: 20px;
-  padding: 32px 24px;
-  box-shadow: 0 8px 32px -8px #28C7FA30;
+  background: var(--gradient-mint-teal);
+  border-radius: 24px;
+  padding: 34px 24px;
+  box-shadow: 0 8px 32px -8px #72dbf823;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 22px;
-  border: 1.5px solid var(--border-color);
+  border: 1.7px solid var(--border-color);
   transition: box-shadow 0.2s;
-
   &:hover, &:focus-within {
-    box-shadow: 0 12px 56px -10px #5B4BFF80, 0 0 0 3px var(--hot-pink, #FF54B6)22;
+    box-shadow: 0 16px 56px -10px #b0bbff62, 0 0 0 3px #7fffd441;
   }
 `;
 
@@ -150,27 +149,28 @@ const Sidebar = styled.aside`
 `;
 
 const StylishCard = styled.div`
-  background: linear-gradient(112deg, rgba(0,242,195,0.14), var(--card-bg) 68%);
-  padding: 18px;
-  border-radius: 14px;
+  background: var(--gradient-violet-sky);
+  padding: 22px;
+  border-radius: 17px;
   min-height: 140px;
-  box-shadow: 0 1px 18px -4px #5433FF30, 0 0 8px #28C7FA24 inset;
+  box-shadow: 0 1px 18px -4px #b2e6fb38, 0 0 16px #b0bbff16 inset;
   border: 1.3px solid var(--border-color);
   margin-bottom: 8px;
   transition: transform 0.18s;
   &:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 28px -6px #00F2C3AA;
+    transform: translateY(-2.5px) scale(1.026);
+    box-shadow: 0 8px 28px -6px #aceeeebb;
   }
 `;
 
 const PerformancePlaceholder = styled(StylishCard)`
   min-height: 115px;
+  background: var(--gradient-blue-cyan);
 `;
 
 const PerfHeading = styled.h3`
   margin-top: 0;
-  color: var(--turquoise);
+  color: #51e0c5;
   letter-spacing: 1.5px;
 `;
 
