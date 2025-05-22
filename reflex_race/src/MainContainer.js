@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import ReactionTestGame from "./ReactionTestGame";
 
 /**
  * PUBLIC_INTERFACE
@@ -50,14 +51,7 @@ function MainContainer() {
             justifyContent: "center",
           }}
         >
-          <h2 style={{ margin: 0, marginBottom: 16 }}>🕹️ Game Interface</h2>
-          <div style={{ color: "var(--text-secondary)", marginBottom: 16 }}>
-            {/* Placeholder for reaction game area */}
-            Game module will appear here.
-          </div>
-          <button className="btn btn-large" disabled>
-            Start Game (Coming Soon)
-          </button>
+          <ReactionTestGame />
         </section>
 
         {/* SIDEBAR: Leaderboard and Performance */}
