@@ -78,30 +78,36 @@ export default function ReactionTestGame() {
         <div className={styles.description}>
           Test your reflexes! Tap <b>Start</b>, wait for the vibrant signal, then tap as fast as you can!
         </div>
-        <button className={`${styles.coolBtn} ${styles.largeBtn}`} onClick={startTest}>
-          Start Reaction Test
-        </button>
+        <div className={styles.buttonRow}>
+          <button className={`${styles.coolBtn} ${styles.largeBtn}`} onClick={startTest}>
+            Start Reaction Test
+          </button>
+        </div>
       </>
     );
   } else if (stage === STAGES.WAITING) {
     mainContent = (
-      <button
-        className={`${styles.coolBtn} ${styles.largeBtn} ${styles.waitingBtn}`}
-        onClick={handleUserTap}
-        autoFocus
-      >
-        {waitingMsg}
-      </button>
+      <div className={styles.buttonRow}>
+        <button
+          className={`${styles.coolBtn} ${styles.largeBtn} ${styles.waitingBtn}`}
+          onClick={handleUserTap}
+          autoFocus
+        >
+          {waitingMsg}
+        </button>
+      </div>
     );
   } else if (stage === STAGES.REACT) {
     mainContent = (
-      <button
-        className={`${styles.coolBtn} ${styles.largeBtn} ${styles.activeCueBtn}`}
-        onClick={handleUserTap}
-        autoFocus
-      >
-        TAP NOW!
-      </button>
+      <div className={styles.buttonRow}>
+        <button
+          className={`${styles.coolBtn} ${styles.largeBtn} ${styles.activeCueBtn}`}
+          onClick={handleUserTap}
+          autoFocus
+        >
+          TAP NOW!
+        </button>
+      </div>
     );
   } else if (stage === STAGES.RESULT) {
     mainContent = (
@@ -114,41 +120,44 @@ export default function ReactionTestGame() {
             ? "You tapped before the signal appeared. Try again!"
             : "Your reaction time!"}
         </div>
-        <button
-          className={`${styles.coolBtn} ${styles.largeBtn}`}
-          onClick={resetTest}
-          style={{ marginRight: 12 }}
-        >
-          {resultMs === "too soon" ? "Try Again" : "Restart"}
-        </button>
+        <div className={styles.buttonRow}>
+          <button
+            className={`${styles.coolBtn} ${styles.largeBtn}`}
+            onClick={resetTest}
+          >
+            {resultMs === "too soon" ? "Try Again" : "Restart"}
+          </button>
+        </div>
       </>
     );
   }
 
   return (
-    <div className={styles.gameAreaCard}>
-      <h2 className={styles.heading}>⚡ Reaction Test</h2>
-      <div style={{ marginBottom: 30 }}>{mainContent}</div>
-      <div>
-        <h4 className={styles.pastResultsTitle}>Past Results</h4>
-        <ul className={styles.resultsList}>
-          {history.length === 0 ? (
-            <li className={styles.resultsNone}>No results yet.</li>
-          ) : (
-            history.map((entry, idx) => (
-              <li
-                key={idx}
-                className={
-                  entry === "too soon" ? styles.resultBad : styles.resultGood
-                }
-              >
-                {entry === "too soon"
-                  ? "🚫 Too Soon!"
-                  : entry + " ms"}
-              </li>
-            ))
-          )}
-        </ul>
+    <div className={styles.gameAreaCardOuter}>
+      <div className={styles.gameAreaCard}>
+        <h2 className={styles.heading}>⚡ Reaction Test</h2>
+        <div className={styles.mainContentWrapper}>{mainContent}</div>
+        <div className={styles.pastResultsWrapper}>
+          <h4 className={styles.pastResultsTitle}>Past Results</h4>
+          <ul className={styles.resultsList}>
+            {history.length === 0 ? (
+              <li className={styles.resultsNone}>No results yet.</li>
+            ) : (
+              history.map((entry, idx) => (
+                <li
+                  key={idx}
+                  className={
+                    entry === "too soon" ? styles.resultBad : styles.resultGood
+                  }
+                >
+                  {entry === "too soon"
+                    ? "🚫 Too Soon!"
+                    : entry + " ms"}
+                </li>
+              ))
+            )}
+          </ul>
+        </div>
       </div>
     </div>
   );
