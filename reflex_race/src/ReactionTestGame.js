@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import styles from "./ReactionTestGame.module.css";
 
 /**
  * PUBLIC_INTERFACE
@@ -38,7 +39,7 @@ export default function ReactionTestGame() {
       setStage(STAGES.REACT);
       startTimestamp.current = Date.now();
     }, delay);
-    setWaitingMsg("Wait for the orange signal...");
+    setWaitingMsg("Wait for the vibrant signal...");
   }
 
   // PUBLIC_INTERFACE
@@ -48,14 +49,14 @@ export default function ReactionTestGame() {
       timerRef.current && clearTimeout(timerRef.current);
       setStage(STAGES.RESULT);
       setResultMs("too soon");
-      setHistory([ "too soon", ...history.slice(0, 9)]);
+      setHistory(["too soon", ...history.slice(0, 9)]);
       return;
     }
     if (stage === STAGES.REACT) {
       // Measure reaction time
       const reactionTime = Date.now() - startTimestamp.current;
       setResultMs(reactionTime);
-      setHistory([ reactionTime, ...history.slice(0, 9) ]);
+      setHistory([reactionTime, ...history.slice(0, 9)]);
       setStage(STAGES.RESULT);
     }
   }
@@ -74,10 +75,10 @@ export default function ReactionTestGame() {
   if (stage === STAGES.READY) {
     mainContent = (
       <>
-        <div style={{ marginBottom: 24, color: "var(--text-secondary)" }}>
-          Test your reflexes! Tap <b>Start</b>, wait for the orange signal, then tap as fast as you can!
+        <div className={styles.description}>
+          Test your reflexes! Tap <b>Start</b>, wait for the vibrant signal, then tap as fast as you can!
         </div>
-        <button className="btn btn-large" onClick={startTest}>
+        <button className={`${styles.coolBtn} ${styles.largeBtn}`} onClick={startTest}>
           Start Reaction Test
         </button>
       </>
@@ -85,15 +86,7 @@ export default function ReactionTestGame() {
   } else if (stage === STAGES.WAITING) {
     mainContent = (
       <button
-        className="btn btn-large"
-        style={{
-          width: 280,
-          height: 100,
-          fontSize: "1.3rem",
-          backgroundColor: "#44444b",
-          color: "var(--text-secondary)",
-          cursor: "pointer",
-        }}
+        className={`${styles.coolBtn} ${styles.largeBtn} ${styles.waitingBtn}`}
         onClick={handleUserTap}
         autoFocus
       >
@@ -103,16 +96,7 @@ export default function ReactionTestGame() {
   } else if (stage === STAGES.REACT) {
     mainContent = (
       <button
-        className="btn btn-large"
-        style={{
-          width: 280,
-          height: 100,
-          fontSize: "1.38rem",
-          backgroundColor: "var(--kavia-orange)",
-          color: "#fff",
-          boxShadow: "0 0 18px 2px #E87A41cc",
-          cursor: "pointer"
-        }}
+        className={`${styles.coolBtn} ${styles.largeBtn} ${styles.activeCueBtn}`}
         onClick={handleUserTap}
         autoFocus
       >
@@ -122,15 +106,19 @@ export default function ReactionTestGame() {
   } else if (stage === STAGES.RESULT) {
     mainContent = (
       <>
-        <div style={{ fontSize: 28, marginBottom: 10 }}>
+        <div className={styles.resultLabel}>
           {resultMs === "too soon" ? "🚫 Too Soon!" : <>⏱️ {resultMs} ms</>}
         </div>
-        <div style={{ marginBottom: 28, color: "var(--text-secondary)" }}>
+        <div className={styles.resultDescription}>
           {resultMs === "too soon"
             ? "You tapped before the signal appeared. Try again!"
             : "Your reaction time!"}
         </div>
-        <button className="btn btn-large" onClick={resetTest} style={{ marginRight: 12 }}>
+        <button
+          className={`${styles.coolBtn} ${styles.largeBtn}`}
+          onClick={resetTest}
+          style={{ marginRight: 12 }}
+        >
           {resultMs === "too soon" ? "Try Again" : "Restart"}
         </button>
       </>
@@ -138,30 +126,25 @@ export default function ReactionTestGame() {
   }
 
   return (
-    <div>
-      <h2 style={{ margin: 0, marginBottom: 16 }}>⚡ Reaction Test</h2>
-      <div style={{ marginBottom: 28 }}>
-        {mainContent}
-      </div>
+    <div className={styles.gameAreaCard}>
+      <h2 className={styles.heading}>⚡ Reaction Test</h2>
+      <div style={{ marginBottom: 30 }}>{mainContent}</div>
       <div>
-        <h4 style={{ color: "var(--kavia-orange)", marginBottom: 2, marginTop: 30, fontWeight: 500 }}>Past Results</h4>
-        <ul style={{
-          margin: 0,
-          padding: 0,
-          listStyle: "none",
-          color: "var(--text-secondary)",
-          maxHeight: 120,
-          overflowY: "auto"
-        }}>
+        <h4 className={styles.pastResultsTitle}>Past Results</h4>
+        <ul className={styles.resultsList}>
           {history.length === 0 ? (
-            <li style={{ fontStyle: "italic" }}>No results yet.</li>
+            <li className={styles.resultsNone}>No results yet.</li>
           ) : (
             history.map((entry, idx) => (
-              <li key={idx} style={{
-                padding: 3,
-                color: entry === "too soon" ? "#FF5D5D" : "var(--kavia-orange)"
-              }}>
-                {entry === "too soon" ? "🚫 Too Soon!" : (entry + " ms")}
+              <li
+                key={idx}
+                className={
+                  entry === "too soon" ? styles.resultBad : styles.resultGood
+                }
+              >
+                {entry === "too soon"
+                  ? "🚫 Too Soon!"
+                  : entry + " ms"}
               </li>
             ))
           )}
