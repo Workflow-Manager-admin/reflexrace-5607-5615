@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Leaderboard.module.css";
 
 /**
  * PUBLIC_INTERFACE
@@ -23,29 +24,22 @@ const MOCK_LEADERBOARD = [
 function Leaderboard() {
   return (
     <div>
-      <h3 style={{ marginTop: 0, color: "var(--kavia-orange)", marginBottom: 12, fontWeight: 600 }}>
+      <h3 className={styles.title}>
         🏆 Leaderboard
       </h3>
-      <ol style={{ paddingLeft: 18, margin: 0, color: "var(--text-secondary)", fontSize: "1.08rem" }}>
+      <ol className={styles.leaderboardList}>
         {MOCK_LEADERBOARD.map((entry, idx) => (
-          <li key={entry.name} style={{
-            padding: "4px 0",
-            fontWeight: idx === 0 ? 700 : 400,
-            color: idx === 0 ? "var(--kavia-orange)" : "var(--text-secondary)",
-            letterSpacing: "0.5px"
-          }}>
-            <span style={{ minWidth: 100, display: "inline-block" }}>
+          <li
+            key={entry.name}
+            className={idx === 0 ? styles.topScorer : styles.scorer}
+            style={{
+              animationDelay: `${idx * 55}ms`
+            }}
+          >
+            <span className={styles.leaderName}>
               {entry.name}
             </span>
-            <span style={{
-              fontFamily: "monospace",
-              marginLeft: 6,
-              color: "#fff",
-              background: idx === 0 ? "rgba(232, 122, 65, 0.18)" : "transparent",
-              borderRadius: 4,
-              padding: "2px 6px",
-              fontWeight: 600,
-            }}>
+            <span className={styles.leaderTime}>
               {entry.time} ms
             </span>
           </li>
